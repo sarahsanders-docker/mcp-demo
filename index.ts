@@ -1,8 +1,8 @@
-import Sandbox from '../E2B-sdk/packages/js-sdk/dist'
+import Sandbox from 'e2b'
 import { Agent, run, MCPServerStreamableHttp, getLogger } from '@openai/agents';
 
 console.log('Creating E2B sandbox with arXiv and DuckDuckGo MCP servers...');
-const sandbox = await Sandbox.betaCreate('mcp-gateway-v0', {
+const sandbox = await Sandbox.betaCreate({
     mcp: {
         duckduckgo: {},
         arxiv: {
