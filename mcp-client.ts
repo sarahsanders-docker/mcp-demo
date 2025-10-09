@@ -1,4 +1,4 @@
-import Sandbox from '../E2B-sdk/packages/js-sdk/dist'
+import Sandbox from 'e2b'
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';
 
@@ -12,16 +12,20 @@ const sandbox = await Sandbox.betaCreate({
     },
 });
 
-
 const client = new Client({
-    name: 'streamable-http-client',
+    name: 'streamable-e2b-gateway-client',
     version: '1.0.0'
 });
 
 const transport = new StreamableHTTPClientTransport(new URL(sandbox.betaGetMcpUrl()));
 await client.connect(transport);
-console.log('Connected to MCP server at time ' + new Date().toISOString());
+
+console.log('Connected to MCP server');
+
 const tools = await client.listTools();
-console.log(tools.tools);
-console.log('Disconnecting from MCP server at time ' + new Date().toISOString());
+for (const tool of tools.tools) {
+    console.log(tool.name);
+}
+
+console.log('Disconnecting from MCP server');
 await client.close();
