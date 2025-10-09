@@ -56,3 +56,35 @@ OpenAI agent that researches papers on arXiv and searches for authors on DuckDuc
 export OPENAI_API_KEY="your-key"
 bun examples/research-agent.ts
 ```
+
+
+## Python
+
+The beta is also released for the Python SDK:
+
+```
+pip install e2b==2.2.4
+```
+
+```python
+from e2b import AsyncSandbox
+
+import asyncio
+
+
+async def main():
+    sandbox = await AsyncSandbox.beta_create(
+        mcp={
+            "duckduckgo": {},
+            "arxiv": {
+                "storagePath": "/",
+            },
+        },
+    )
+
+    mcp_url = sandbox.beta_get_mcp_url()
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
