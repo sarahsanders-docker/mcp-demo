@@ -2,6 +2,22 @@
 
 Examples demonstrating E2B sandboxes with the (beta) MCP Gateway.
 
+```javascript
+import Sandbox from 'e2b'
+
+const sandbox = await Sandbox.betaCreate({
+    mcp: {
+        duckduckgo: {},
+        arxiv: {
+            // MCP servers + properties are fully typed!
+            storagePath: '/'
+        },
+    },
+});
+
+const mcpUrl = sandbox.betaGetMcpUrl();
+```
+
 ## Setup
 
 ```bash
