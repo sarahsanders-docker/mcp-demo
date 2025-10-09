@@ -1,4 +1,4 @@
-# E2B MCP Gateway Demo
+# E2B MCP Demo
 
 Examples demonstrating E2B sandboxes with the (beta) MCP Gateway.
 
