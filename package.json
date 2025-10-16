@@ -12,6 +12,6 @@
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.19.1",
     "@openai/agents": "^0.1.9",
-    "e2b": "2.2.4"
+    "e2b": "2.3.0"
   }
 }
